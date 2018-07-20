@@ -34,5 +34,13 @@
     "eslint-plugin-react": "^7.10.0",
     "jest-enzyme": "^6.0.2",
     "webpack": "^3.12.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vis-a-vis/pageInfo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vis-a-vis/pageInfo/issues"
+  },
+  "homepage": "https://github.com/vis-a-vis/pageInfo#readme"
 }
