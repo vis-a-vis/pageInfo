@@ -1,7 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import Summary from './Summary.jsx'
-
 
 /*const infoStyle = {
   float: 'left',
@@ -10,34 +7,27 @@ import Summary from './Summary.jsx'
   borderStyle: 'solid',
   borderWidth: '2px',
   textAlign: 'center'
-};*/
-
- class PageInfo extends React.Component {
-  constructor(props) {
-    super(props);
+};
+*/
+export default class Info extends React.Component {
+  constructor() {
+    super();
 
     this.state = {
-      cateogry : 'entire house',
-      name: 'Studio Guest House',
-      city: 'South Lake Tahoe',
-      guest_num: 1,
-      bedroom_num: 2,
-      bath_num: 3,
-      description: 'testing description',
-      more_description: 'testing more_description',
-      house_rules: 'testing house_rules',
-      more_rules: 'testing more rules',
-      cancel_policy: 'testing cancel_policy',
-      more_cancel_policy: 'testing more_cancel_policy',
-      sleeping_arrangement: 'tesing sleeping_arrangement',
-      amenities: 'testing amenities'
-
+      item: {
+        ID: '252120z',
+        location: 'Albany, NY',
+        condition: 'Brand New',
+        name: 'CanonEOS 40d',
+        price: 499
+      },
+      currentBid: 499
     };
 
-   /* this.handleClick = this.handleClick.bind(this);*/
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  /*handleClick(e) {
+  handleClick(e) {
     let newBid = this.state.currentBid + 1;
     let item = Object.assign({}, this.state.item);
     item.price = newBid;
@@ -45,25 +35,32 @@ import Summary from './Summary.jsx'
       currentBid: newBid,
       item: item
     });
-  }*/
-  componentDidMount(){
-    this.getPageInfo(1)
-  }
-  getPageInfo(roomid) {
-    axios.get('/room/' + roomid)
-      .then(results => console.log('pageinfo:', results.data))
-      .catch(err => console.log('err fetching pageinfo:', err))
-
   }
 
   render() {
     return (
-     <div>
-       <Summary category={this.state.cateogry} name={this.state.name} city= {this.state.city} guest_num={this.state.guest_num} bedroom_num= {this.state.bedroom_num} bath_num= {this.state.bath_num}/>
-       
-     </div>
+      <div style={infoStyle}>
+        <p>
+          <span>
+            Auction: {this.state.item.ID}
+          </span>
+          <br/>
+          <span>
+            For sale is a <em>
+              {this.state.item.condition}
+            </em> <strong>
+              {this.state.item.name}
+            </strong>
+          </span>
+          <br />
+          <span>
+            Current Bid: ${this.state.item.price}
+          </span>
+          <button onClick={(e) => {this.handleClick(e)}}>
+          Bid
+          </button>
+        </p>
+      </div>
     );
   }
 }
-
-export default PageInfo
