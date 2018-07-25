@@ -18989,8 +18989,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
   borderStyle: 'solid',
   borderWidth: '2px',
   textAlign: 'center'
-};*/
-
+};
+*/
 var PageInfo = function (_React$Component) {
   _inherits(PageInfo, _React$Component);
 
@@ -19016,21 +19016,8 @@ var PageInfo = function (_React$Component) {
       amenities: 'testing amenities'
 
     };
-
-    /* this.handleClick = this.handleClick.bind(this);*/
     return _this;
   }
-
-  /*handleClick(e) {
-    let newBid = this.state.currentBid + 1;
-    let item = Object.assign({}, this.state.item);
-    item.price = newBid;
-    this.setState({
-      currentBid: newBid,
-      item: item
-    });
-  }*/
-
 
   _createClass(PageInfo, [{
     key: 'componentDidMount',
