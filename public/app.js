@@ -19031,7 +19031,22 @@ var PageInfo = function (_React$Component) {
     });
   }*/
 
+
   _createClass(PageInfo, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.getPageInfo(1);
+    }
+  }, {
+    key: 'getPageInfo',
+    value: function getPageInfo(roomid) {
+      _axios2.default.get('/room/' + roomid).then(function (results) {
+        return console.log('pageinfo:', results.data);
+      }).catch(function (err) {
+        return console.log('err fetching pageinfo:', err);
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
