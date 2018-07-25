@@ -1,3 +1,8 @@
-import Info from './components/pageInfo.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-window.Info = Info;
+import PageInfo from './components/pageInfo.jsx';
+
+/*window.Info = Info;*/
+
+ReactDOM.render(<PageInfo />, document.getElementById('pageinfo'));
