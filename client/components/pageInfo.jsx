@@ -46,6 +46,15 @@ import Summary from './Summary.jsx'
       item: item
     });
   }*/
+  componentDidMount(){
+    this.getPageInfo(1)
+  }
+  getPageInfo(roomid) {
+    axios.get('/room/' + roomid)
+      .then(results => console.log('pageinfo:', results.data))
+      .catch(err => console.log('err fetching pageinfo:', err))
+
+  }
 
   render() {
     return (
